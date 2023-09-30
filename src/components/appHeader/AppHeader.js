@@ -14,7 +14,7 @@ const AppHeader = () => {
           <li>
             <NavLink
               end
-              style={({ isActive }) => ({
+              style={({ isActive = true }) => ({
                 color: isActive ? "#9F0013" : "inherit",
               })}
               to="/"

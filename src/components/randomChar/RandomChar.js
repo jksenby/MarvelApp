@@ -5,18 +5,14 @@ import "./randomChar.scss";
 import mjolnir from "../../resources/img/mjolnir.png";
 import { useState, useEffect } from "react";
 
-const RandomChar = (props) => {
+const RandomChar = () => {
   const [char, setChar] = useState({});
 
   const { getCharacter, clearError, process, setProcess } = useMarvelService();
 
   useEffect(() => {
     updateChar();
-    const timerId = setInterval(updateChar, 6000);
-
-    return () => {
-      clearInterval(timerId);
-    };
+    // eslint-disable-next-line
   }, []);
   const onCharLoaded = (char) => {
     setChar(char);
